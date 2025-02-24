@@ -6,18 +6,25 @@ class BasicHomeButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      style: TextButton.styleFrom(
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.green,
-      ),
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => BasicHome()),
-        );
-      },
-      child: const Text('Open Basic Home'),
+    return Row(
+      children: [
+        // Expanded widget is used to make the button fill the available space
+        Expanded(
+          child: TextButton(
+            style: TextButton.styleFrom(
+              foregroundColor: Colors.white,
+              backgroundColor: Colors.green,
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => BasicHome()),
+              );
+            },
+            child: const Text('Open Basic Home'),
+          ),
+        ),
+      ],
     );
   }
 }
